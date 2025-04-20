@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style/main.css" />
+    <title>Frontend Mentor | News homepage</title>
+  </head>
+  <body class="min-h-screen py-6 bg-off-white">
+    <div class="container mx-auto px-4 sm:px-0">
+      <header class="flex justify-between items-center">
+        <a href="#" width="30" height="30"><img src="assets/images/logo.svg" alt="W." /></a>
+        <button id="showLinks" class="sm:hidden cursor-pointer">
+          <img src="assets/images/icon-menu.svg" alt="Menu" width="30" />
+        </button>
+        <ul
+          id="links"
+          class="hidden sm:flex flex-col sm:flex-row gap-6 text-sm text-dark-grayish-blue">
+          <li>Home</li>
+          <li>New</li>
+          <li>Popular</li>
+          <li>Trending</li>
+          <li>Categories</li>
+        </ul>
+      </header>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
