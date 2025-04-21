@@ -18,3 +18,55 @@
 body {
   font-family: "Inter", sans-serif;
 }
+
+nav ul li {
+  @apply hover:text-soft-orange duration-200;
+}
+
+@media (max-width: 640px) {
+  main {
+    grid-template-areas: "img" "heading" "text" "new-news" "news" "news" "news";
+  }
+}
+@media (min-width: 641px) {
+  main {
+    grid-template-areas: "img img" "new-news heading" "new-news text" "news news";
+  }
+}
+@media (min-width: 1024px) {
+  main {
+    grid-template-areas: "img img new-news" "heading text new-news" "news news news";
+  }
+}
+
+#new-news p {
+  grid-area: new-news;
+  line-height: 1.7;
+}
+#new-news div a {
+  @apply: hover:text-soft-orange duration-200;
+}
+#mainImg {
+  grid-area: img;
+}
+#heading {
+  grid-area: heading;
+}
+#text {
+  grid-area: text;
+}
+#text a {
+  @apply hover:bg-very-dark-blue duration-200 hover:text-off-white;
+}
+#news {
+  counter-reset: card;
+  grid-area: news;
+}
+#news div div h3 {
+  @apply font-bold text-very-dark-blue hover:text-soft-orange duration-200;
+}
+#news div div::before {
+  counter-increment: card;
+  content: "0" counter(card);
+  @apply font-bold text-soft-red text-3xl block;
+}

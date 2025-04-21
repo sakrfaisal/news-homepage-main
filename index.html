@@ -10,23 +10,160 @@
     <title>Frontend Mentor | News homepage</title>
   </head>
   <body class="min-h-screen py-6 bg-off-white">
-    <div class="container mx-auto px-4 sm:px-0">
-      <header class="flex justify-between items-center">
-        <a href="#" width="30" height="30"><img src="assets/images/logo.svg" alt="W." /></a>
-        <button id="showLinks" class="sm:hidden cursor-pointer">
-          <img src="assets/images/icon-menu.svg" alt="Menu" width="30" />
-        </button>
-        <ul
-          id="links"
-          class="hidden sm:flex flex-col sm:flex-row gap-6 text-sm text-dark-grayish-blue">
-          <li>Home</li>
-          <li>New</li>
-          <li>Popular</li>
-          <li>Trending</li>
-          <li>Categories</li>
-        </ul>
-      </header>
-    </div>
-    <script src="main.js"></script>
+    <nav class="container mx-auto px-4 sm:px-0 flex justify-between items-center mb-8">
+      <a href="#" width="30" height="30"><img src="assets/images/logo.svg" alt="W." /></a>
+      <ul id="navBar" class="flex gap-6 text-sm text-dark-grayish-blue bg-off-white">
+        <li class="hidden sm:block"><a href="#">Home</a></li>
+        <li class="hidden sm:block"><a href="#new-news">New</a></li>
+        <li class="hidden sm:block"><a href="#news">Popular</a></li>
+        <li class="hidden sm:block"><a href="#">Trending</a></li>
+        <li class="hidden sm:block"><a href="#">Categories</a></li>
+        <img
+          src="assets/images/icon-menu.svg"
+          alt="Menu"
+          class="block sm:hidden cursor-pointer"
+          onclick="openMenuFunc()" />
+      </ul>
+      <ul
+        id="sidebar"
+        class="p-6 hidden items-start flex-col fixed top-0 right-0 bg-white w-60 h-full gap-4">
+        <img
+          src="assets/images/icon-menu-close.svg"
+          alt="Menu"
+          width="25"
+          height="25"
+          class="mb-10 ml-auto cursor-pointer"
+          onclick="closeMenuFunc()" />
+        <li><a href="#">Home</a></li>
+        <li><a href="#new-news">New</a></li>
+        <li><a href="#news">Popular</a></li>
+        <li><a href="#">Trending</a></li>
+        <li><a href="#">Categories</a></li>
+      </ul>
+    </nav>
+    <main class="container mx-auto px-4 sm:px-0 grid auto-rows-auto gap-8">
+      <picture class="lg:col-span-2" id="mainImg">
+        <source srcset="assets/images/image-web-3-desktop.jpg" media="(min-width: 640px)" />
+        <img
+          src="assets/images/image-web-3-mobile.jpg"
+          alt=""
+          class="object-cover h-full w-full max-h-70" />
+      </picture>
+
+      <div id="new-news" class="w-78 bg-very-dark-blue p-5 sm:row-span-2 row-start-4">
+        <h2 class="text-4xl text-soft-orange font-bold">New</h2>
+        <div class="py-5 border-1 border-b-dark-grayish-blue">
+          <h3 class="mb-2">
+            <a
+              class="text-off-white text-lg font-semibold hover:text-soft-orange duration-200"
+              href="#"
+              >Hydrogen VS Electric Cars</a
+            >
+          </h3>
+          <p class="text-grayish-blue text-sm">Will hydrogen-fueled cars ever catch up to EVs?</p>
+        </div>
+        <div class="py-5 border-1 border-b-dark-grayish-blue">
+          <h3 class="mb-2">
+            <a
+              class="text-off-white text-lg font-semibold hover:text-soft-orange duration-200"
+              href="#"
+              >The Downsides of AI Artistry</a
+            >
+          </h3>
+          <p class="text-grayish-blue text-sm">
+            What are the possible adverse effects of on-demand AI image generation?
+          </p>
+        </div>
+        <div class="pt-5">
+          <h3 class="mb-2">
+            <a
+              class="text-off-white text-lg font-semibold hover:text-soft-orange duration-200"
+              href="#"
+              >Is VC Funding Drying Up?</a
+            >
+          </h3>
+          <p class="text-grayish-blue text-sm">
+            Private funding by VC firms is down 50% YOY. We take a look at what that means.
+          </p>
+        </div>
+      </div>
+
+      <div id="heading">
+        <h1 class="font-bold text-5xl leading-15">
+          The Bright <br />
+          Future of <br />
+          Web 3.0?
+        </h1>
+      </div>
+
+      <div id="text" class="max-w-110 flex-col justify-between">
+        <p class="text-dark-grayish-blue mb-4">
+          We dive into the next evolution of the web that claims to put the power of the platforms
+          back into the hands of the people. But is it really fulfilling its promise?
+        </p>
+        <a
+          href="#"
+          class="block w-fit px-7 py-2.5 bg-red-500 text-very-dark-blue text-sm font-semibold tracking-[4px]"
+          >READ MORE</a
+        >
+      </div>
+
+      <div id="news" class="flex flex-col lg:flex-row gap-2">
+        <div class="flex gap-4 mb-5 md:mb-0">
+          <img
+            src="assets/images/image-retro-pcs.jpg"
+            alt="retro-pcs"
+            width="100"
+            height="127"
+            class="object-cover" />
+          <div class="flex flex-col gap-2">
+            <h3>Reviving Retro PCs</h3>
+            <p class="text-dark-grayish-blue text-sm">
+              What happens when old PCs are given modern upgrades?
+            </p>
+          </div>
+        </div>
+        <div class="flex gap-4 mb-5 md:mb-0">
+          <img
+            src="assets/images/image-top-laptops.jpg"
+            alt="top-laptops"
+            width="100"
+            height="127"
+            class="object-cover" />
+          <div class="flex flex-col gap-2">
+            <h3>Top 10 Laptops of 2022</h3>
+            <p class="text-dark-grayish-blue text-sm">
+              Our best picks for various needs and budgets.
+            </p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <img
+            src="assets/images/image-gaming-growth.jpg"
+            alt="gaming-growth"
+            width="100"
+            height="127"
+            class="object-cover" />
+          <div class="flex flex-col gap-2">
+            <h3>The Growth of Gaming</h3>
+            <p class="text-dark-grayish-blue text-sm">
+              How the pandemic has sparked fresh opportunities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      const menu = document.getElementById("sidebar");
+      function openMenuFunc() {
+        menu.style.display = "flex";
+      }
+      function closeMenuFunc() {
+        menu.style.display = "none";
+      }
+      window.onresize = () => {
+        closeMenuFunc();
+      };
+    </script>
   </body>
 </html>
